@@ -1,0 +1,34 @@
+{
+  "name": "booklistjs",
+  "version": "1.0.0",
+  "description": "Web application using Vanilla JavaScript following the YouTube tutorial from @bradtraversy",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --out-dir build/ --public-url ./",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvestrevivo/booklistjs.git"
+  },
+  "keywords": [
+    "javascript",
+    "app",
+    "purejs"
+  ],
+  "author": "@silvestrevivo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silvestrevivo/booklistjs/issues"
+  },
+  "homepage": "https://github.com/silvestrevivo/booklistjs#readme",
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "parcel-plugin-clean-dist": "0.0.6",
+    "parcel-plugin-clean-easy": "^1.0.2"
+  },
+  "parcelCleanPaths": [
+    "build/*.*"
+  ]
+}
