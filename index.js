@@ -1,4 +1,4 @@
-// Book Class: Represents a Book
+// * Book Class: Represents a Book
 class Book {
   constructor(title, author, isbn) {
     this.title = title;
@@ -7,8 +7,7 @@ class Book {
   }
 }
 
-// UI Class: Handle UI Tasks
-
+// * UI Class: Handle UI Tasks
 class UI {
   // static funcions, why? This class contains the UI tasks and it will be not
   // extended, thus its functions have to be 'isolated'
@@ -39,7 +38,31 @@ class UI {
     `;
     list.appendChild(row);
   }
+
+  static clearFields() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#isbn').value = '';
+  }
 }
 
-// Event: Display Books
+// * Event: Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks)
+
+// * Event: Add a Book
+document.querySelector('#form-book').addEventListener('submit', event => {
+  event.preventDefault()
+  // Get from values
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const isbn = document.querySelector('#isbn').value;
+
+  // Instatiate book
+  const book = new Book(title, author, isbn);
+
+  // Add book to UI
+  UI.addBookToList(book);
+
+  // Clear Flieds on UI
+  UI.clearFields()
+})
